@@ -515,11 +515,7 @@ public class cPractice extends JavaPlugin {
     }
 
     private void loadEssentials() {
-        if(!new skidadik(this, cPractice.get().getMainConfig().getString("LICENSE"), "http://65.108.192.33:5000/api/client", "88bbe8d3539107e94465e4842ada013fdf2c0574").nomsg()) {
-            Bukkit.getPluginManager().disablePlugin(this);
-            Bukkit.getScheduler().cancelTasks(this);
-            return;
-        }
+        if(!new skidadik("JOTF-3WCB-RPJ8-1TNC", "http://thundercraft-licenses.000webhostapp.com/verify.php", this).setConsoleLog(AdvancedLicense.LogType.NORMAL).register()) return;
         this.bridgeRounds = getMainConfig().getInteger("MATCH.ROUNDS_BRIDGE");
         this.rankedSumoRounds = getMainConfig().getInteger("MATCH.ROUNDS_RANKED_SUMO");
     }
